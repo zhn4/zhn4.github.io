@@ -4,7 +4,7 @@
 
 # Site
 title: 老周
-subtitle:
+subtitle: 学习，记录，分享
 description:
 author: 老周
 language:
@@ -68,6 +68,4 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: git@github.com:zhn4/zhn4.github.io.git
-  branch: master
+  type:
