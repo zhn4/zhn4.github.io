@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git rebase 使用 | 老周</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="git rebase 使用使用rebase合并，比merge合并好处在于减少多余的合并记录
+参考：https://backlogtool.com/git-guide/tw/stepup/stepup2_8.html
+12345678910111213141516#master主分支，dev次分支#master分支保持最新版本git pull origin master#切换到到dev分支git c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git rebase 使用">
+<meta property="og:url" content="http://yoursite.com/2016/07/26/git-rebase-使用/index.html">
+<meta property="og:site_name" content="老周">
+<meta property="og:description" content="git rebase 使用使用rebase合并，比merge合并好处在于减少多余的合并记录
+参考：https://backlogtool.com/git-guide/tw/stepup/stepup2_8.html
+12345678910111213141516#master主分支，dev次分支#master分支保持最新版本git pull origin master#切换到到dev分支git c">
+<meta property="og:updated_time" content="2016-07-26T08:00:01.312Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git rebase 使用">
+<meta name="twitter:description" content="git rebase 使用使用rebase合并，比merge合并好处在于减少多余的合并记录
+参考：https://backlogtool.com/git-guide/tw/stepup/stepup2_8.html
+12345678910111213141516#master主分支，dev次分支#master分支保持最新版本git pull origin master#切换到到dev分支git c">
+  
+    <link rel="alternate" href="/atom.xml" title="老周" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">老周</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">学习，记录，分享</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-git-rebase-使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/26/git-rebase-使用/" class="article-date">
+  <time datetime="2016-07-26T07:55:39.000Z" itemprop="datePublished">2016-07-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git rebase 使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="git-rebase-使用"><a href="#git-rebase-使用" class="headerlink" title="git rebase 使用"></a>git rebase 使用</h3><p>使用rebase合并，比merge合并好处在于减少多余的合并记录</p>
+<p>参考：<a href="https://backlogtool.com/git-guide/tw/stepup/stepup2_8.html" target="_blank" rel="external">https://backlogtool.com/git-guide/tw/stepup/stepup2_8.html</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#master主分支，dev次分支</span></div><div class="line"><span class="comment">#master分支保持最新版本</span></div><div class="line">git pull origin master</div><div class="line"></div><div class="line"><span class="comment">#切换到到dev分支</span></div><div class="line">git checkout dev</div><div class="line"></div><div class="line"><span class="comment">#基于master分支rebase</span></div><div class="line">git rebase master</div><div class="line"></div><div class="line"><span class="comment">#添加修改文件</span></div><div class="line">git add <span class="string">'文件名'</span></div><div class="line"></div><div class="line"><span class="comment">#切换到master分支，并合并dev分支</span></div><div class="line">git checkout master</div><div class="line">git merge dev</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/26/git-rebase-使用/" data-id="cir37w0pl0002rkaf9j9co6sa" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/26/sass常用模块/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sass常用模块
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/25/ajax上传图片/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ajax上传图片</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/26/sass常用模块/">sass常用模块</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/26/git-rebase-使用/">git rebase 使用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/25/ajax上传图片/">ajax上传图片</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/07/Ubuntu下安装使用Shadowsocks/">Ubuntu下安装使用Shadowsocks</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/29/hexo使用/">hexo使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 老周<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
