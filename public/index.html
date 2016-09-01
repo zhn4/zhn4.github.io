@@ -52,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -64,6 +64,54 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-FileReader使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/01/FileReader使用/" class="article-date">
+  <time datetime="2016-09-01T02:10:08.000Z" itemprop="datePublished">2016-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/01/FileReader使用/">FileReader使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>读取上传图片，返回预览图</p>
+<p>监听input[type=”filt”]的change事件，使用FileReader接口，readAsDataURL()方法读取图片信息</p>
+<p>参考</p>
+<ul>
+<li><a href="http://www.javascripture.com/FileReader" target="_blank" rel="external">http://www.javascripture.com/FileReader</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#readAsDataURL(" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#readAsDataURL(</a>)</li>
+</ul>
+<p>Demo</p>
+<ul>
+<li><a href="http://jsbin.com/xukinisege/edit?html,js,console,output" target="_blank" rel="external">http://jsbin.com/xukinisege/edit?html,js,console,output</a></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"#"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"file-image"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"show-image"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">  var file_image = document.getElementById('file-image');</div><div class="line">  file_image.addEventListener('change', function() &#123;</div><div class="line">    console.log('listening');</div><div class="line">    var file_reader = new FileReader();</div><div class="line">    file_reader.addEventListener('load', function() &#123;</div><div class="line">      console.log(this.result);</div><div class="line">      var show_image = document.getElementById('show-image');</div><div class="line">      show_image.src = this.result;</div><div class="line">    &#125;);</div><div class="line">    file_reader.readAsDataURL(this.files[0]);</div><div class="line">  &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/01/FileReader使用/" data-id="cisjp26sv0000v9afnztvunj5" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-gulp使用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -95,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/gulp使用/" data-id="cis5tax3c00020qaf4hbwweoj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/22/gulp使用/" data-id="cis5tax3c00020qaf4hbwweoj" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -132,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/26/sass常用模块/" data-id="cis5tax3i00060qafdbe8f8en" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/26/sass常用模块/" data-id="cis5tax3i00060qafdbe8f8en" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -171,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/26/git-rebase-使用/" data-id="cis5tax3g00050qafjwy7mmv7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/26/git-rebase-使用/" data-id="cis5tax3g00050qafjwy7mmv7" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -216,7 +264,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/25/ajax上传图片/" data-id="cis5tax3a00010qaf52c4wyai" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/25/ajax上传图片/" data-id="cis5tax3a00010qaf52c4wyai" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -269,7 +317,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/07/Ubuntu下安装使用Shadowsocks/" data-id="cis5tax3600000qaf6vpnkl0y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/07/Ubuntu下安装使用Shadowsocks/" data-id="cis5tax3600000qaf6vpnkl0y" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -315,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/29/hexo使用/" data-id="cis5tax3d00030qafiymeoxsj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/29/hexo使用/" data-id="cis5tax3d00030qafiymeoxsj" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -360,7 +408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/29/hello-world/" data-id="cis5tax3e00040qafgybyj7p2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/29/hello-world/" data-id="cis5tax3e00040qafgybyj7p2" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -387,7 +435,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
     </div>
   </div>
 
@@ -395,9 +443,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/09/01/FileReader使用/">FileReader使用</a>
+          </li>
         
           <li>
             <a href="/2016/08/22/gulp使用/">gulp使用</a>
@@ -415,10 +467,6 @@
             <a href="/2016/07/25/ajax上传图片/">ajax上传图片</a>
           </li>
         
-          <li>
-            <a href="/2016/07/07/Ubuntu下安装使用Shadowsocks/">Ubuntu下安装使用Shadowsocks</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -432,7 +480,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 老周<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
