@@ -21,7 +21,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#re">
 
 http://www.javascripture.com/FileReader
 https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#re">
-<meta property="og:updated_time" content="2016-09-01T10:23:40.781Z">
+<meta property="og:updated_time" content="2016-09-01T10:30:29.197Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FileReader使用">
 <meta name="twitter:description" content="FileReader使用读取上传图片，返回预览图
@@ -71,9 +71,9 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#re">
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -115,12 +115,12 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#re">
 <ul>
 <li><a href="http://jsbin.com/xukinisege/edit?html,js,console,output" target="_blank" rel="external">http://jsbin.com/xukinisege/edit?html,js,console,output</a></li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"#"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"file-image"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"show-image"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">  var file_image = document.getElementById('file-image');</div><div class="line">  file_image.addEventListener('change', function() &#123;</div><div class="line">    console.log('listening');</div><div class="line">    var file_reader = new FileReader();</div><div class="line">    file_reader.addEventListener('load', function() &#123;</div><div class="line">      console.log(this.result);</div><div class="line">      var show_image = document.getElementById('show-image');</div><div class="line">      show_image.src = this.result;</div><div class="line">    &#125;);</div><div class="line">    file_reader.readAsDataURL(this.files[0]);</div><div class="line">  &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"#"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"file-image"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"show-image"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> file_image = <span class="built_in">document</span>.getElementById(<span class="string">'file-image'</span>);</div><div class="line">  file_image.addEventListener(<span class="string">'change'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'listening'</span>);</div><div class="line">    <span class="keyword">var</span> file_reader = <span class="keyword">new</span> FileReader();</div><div class="line">    file_reader.addEventListener(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.result);</div><div class="line">      <span class="keyword">var</span> show_image = <span class="built_in">document</span>.getElementById(<span class="string">'show-image'</span>);</div><div class="line">      show_image.src = <span class="keyword">this</span>.result;</div><div class="line">    &#125;);</div><div class="line">    file_reader.readAsDataURL(<span class="keyword">this</span>.files[<span class="number">0</span>]);</div><div class="line">  &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/01/FileReader使用/" data-id="cisk6s9b80000hgafygny7612" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/09/01/FileReader使用/" data-id="cisl4ga5q0007ieaf1y0l3wxi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -130,7 +130,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#re">
 <nav id="article-nav">
   
     <a href="/2016/09/01/localStorage使用/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
           localStorage使用
@@ -140,7 +140,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#re">
   
   
     <a href="/2016/08/22/gulp使用/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">gulp使用</div>
     </a>
   
@@ -173,7 +173,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#re">
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -210,7 +210,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#re">
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 老周<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
