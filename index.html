@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>老周</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="老周">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="老周">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="老周">
+  
+    <link rel="alternate" href="/atom.xml" title="老周" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">老周</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">学习，记录，分享</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-localStorage使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/01/localStorage使用/" class="article-date">
+  <time datetime="2016-09-01T10:19:28.000Z" itemprop="datePublished">2016-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/01/localStorage使用/">localStorage使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="localStorage使用"><a href="#localStorage使用" class="headerlink" title="localStorage使用"></a>localStorage使用</h3><p>使用localStorage储存数据，储存的数据是字符串string，需要把字符串转换成json数据方便读取</p>
+<p>参考</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#JSON.stringify用作_JavaScript" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#JSON.stringify用作_JavaScript</a></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h3</span>&gt;</span>localStorage使用<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"value value"</span> <span class="attr">data-id</span>=<span class="string">"1"</span>&gt;</span>黑名单<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"value value"</span> <span class="attr">data-id</span>=<span class="string">"2"</span>&gt;</span>怪奇物语<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"value value"</span> <span class="attr">data-id</span>=<span class="string">"3"</span>&gt;</span>行尸走肉<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span> <span class="attr">id</span>=<span class="string">"clean"</span>&gt;</span>清除localStorage数据<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">    .list &#123;</div><div class="line">      border: 1px solid skyblue;</div><div class="line">      padding: 0 10px;</div><div class="line">    &#125;</div><div class="line">    .value &#123;</div><div class="line">      border: 1px solid tomato;</div><div class="line">      margin: 20px 0;</div><div class="line">      background-color: tomato;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'clean'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'清除localStorage数据'</span>);</div><div class="line">      localStorage.clear(); <span class="comment">//清除localStroage</span></div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="keyword">var</span> value = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'value'</span>);</div><div class="line">    <span class="keyword">var</span> movies = &#123;</div><div class="line">      movie: []</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; value.length; i++) &#123;</div><div class="line">      value[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.dataset[<span class="string">'id'</span>]);</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.innerHTML);</div><div class="line">        movies.movie.push(&#123;</div><div class="line">          id: <span class="keyword">this</span>.dataset[<span class="string">'id'</span>],</div><div class="line">          name: <span class="keyword">this</span>.innerHTML</div><div class="line">        &#125;)</div><div class="line">        localStorage.setItem(<span class="string">'movies'</span>, <span class="built_in">JSON</span>.stringify(movies));<span class="comment">// 使用JSON.stringify()字符串化数据</span></div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(localStorage);<span class="comment">// 原始localStroage数据</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'----'</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">'movies'</span>)));<span class="comment">// 使用JSON.parse()解析成json数据</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/01/localStorage使用/" data-id="cisl89ter0006m5afexhqgoqz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-FileReader使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/01/FileReader使用/" class="article-date">
+  <time datetime="2016-09-01T02:10:08.000Z" itemprop="datePublished">2016-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/01/FileReader使用/">FileReader使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="FileReader使用"><a href="#FileReader使用" class="headerlink" title="FileReader使用"></a>FileReader使用</h3><p>读取上传图片，返回预览图</p>
+<p>监听input[type=”filt”]的change事件，使用FileReader接口，readAsDataURL()方法读取图片信息</p>
+<p>参考</p>
+<ul>
+<li><a href="http://www.javascripture.com/FileReader" target="_blank" rel="external">http://www.javascripture.com/FileReader</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#readAsDataURL(" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#readAsDataURL(</a>)</li>
+</ul>
+<p>Demo</p>
+<ul>
+<li><a href="http://jsbin.com/xukinisege/edit?html,js,console,output" target="_blank" rel="external">http://jsbin.com/xukinisege/edit?html,js,console,output</a></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"#"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"file-image"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"show-image"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">  var file_image = document.getElementById('file-image');</div><div class="line">  file_image.addEventListener('change', function() &#123;</div><div class="line">    console.log('listening');</div><div class="line">    var file_reader = new FileReader();</div><div class="line">    file_reader.addEventListener('load', function() &#123;</div><div class="line">      console.log(this.result);</div><div class="line">      var show_image = document.getElementById('show-image');</div><div class="line">      show_image.src = this.result;</div><div class="line">    &#125;);</div><div class="line">    file_reader.readAsDataURL(this.files[0]);</div><div class="line">  &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/01/FileReader使用/" data-id="cisl89tej0001m5afsn09d0is" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gulp使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/22/gulp使用/" class="article-date">
+  <time datetime="2016-08-22T07:50:30.000Z" itemprop="datePublished">2016-08-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/22/gulp使用/">gulp使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="gulp使用"><a href="#gulp使用" class="headerlink" title="gulp使用"></a>gulp使用</h3><ul>
+<li>配置<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 'use strict';</span></div><div class="line"><span class="comment">// 引入 gulp</span></div><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</div><div class="line"><span class="comment">// 引入组件</span></div><div class="line"><span class="keyword">var</span> jshint = <span class="built_in">require</span>(<span class="string">'gulp-jshint'</span>),</div><div class="line">    sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>),</div><div class="line">    minifycss = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>),</div><div class="line">    concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>),</div><div class="line">    uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>),</div><div class="line">    rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>),</div><div class="line">    clean = <span class="built_in">require</span>(<span class="string">'gulp-clean'</span>),</div><div class="line">    livereload = <span class="built_in">require</span>(<span class="string">'gulp-livereload'</span>),</div><div class="line">    imagemin = <span class="built_in">require</span>(<span class="string">'gulp-imagemin'</span>),</div><div class="line">    cache = <span class="built_in">require</span>(<span class="string">'gulp-cache'</span>),</div><div class="line">    notify = <span class="built_in">require</span>(<span class="string">'gulp-notify'</span>),</div><div class="line">    plumber = <span class="built_in">require</span>(<span class="string">'gulp-plumber'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 检查脚本</span></div><div class="line">gulp.task(<span class="string">'lint'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  gulp.src(<span class="string">'./src/scripts/*.js'</span>)</div><div class="line">  .pipe(jshint())</div><div class="line">  .pipe(jshint.reporter(<span class="string">'default'</span>));</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 编译Sass</span></div><div class="line">gulp.task(<span class="string">'styles'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  gulp.src(<span class="string">'./src/styles/layout.scss'</span>)</div><div class="line">  .pipe(plumber(&#123;errorHandler: notify.onError(<span class="string">'Error: &lt;%= error.message %&gt;'</span>)&#125;))</div><div class="line">  .pipe(sass())</div><div class="line">  .pipe(gulp.dest(<span class="string">'./dist/styles'</span>))</div><div class="line">  .pipe(rename(&#123; suffix: <span class="string">'.min'</span> &#125;))</div><div class="line">  .pipe(minifycss())</div><div class="line">  .pipe(gulp.dest(<span class="string">'dist/styles'</span>));</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 监听sass文件变化</span></div><div class="line">gulp.task(<span class="string">'sass:watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  gulp.watch(<span class="string">'./src/styles/layout.scss'</span>, [<span class="string">'sass'</span>]);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 合并，压缩文件</span></div><div class="line">gulp.task(<span class="string">'scripts'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  gulp.src(<span class="string">'./src/scripts/**/*.js'</span>)</div><div class="line">  .pipe(plumber(&#123;errorHandler: notify.onError(<span class="string">'Error: &lt;%= error.message %&gt;'</span>)&#125;))</div><div class="line">  .pipe(concat(<span class="string">'all.js'</span>))</div><div class="line">  .pipe(gulp.dest(<span class="string">'./dist/scripts'</span>))</div><div class="line">  .pipe(rename(<span class="string">'all.min.js'</span>))</div><div class="line">  .pipe(uglify())</div><div class="line">  .pipe(gulp.dest(<span class="string">'./dist/scripts'</span>));</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 图片</span></div><div class="line">gulp.task(<span class="string">'images'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./src/images/**/*.&#123;png,jpg,gif,ico&#125;'</span>)</div><div class="line">  .pipe(cache(imagemin(&#123;</div><div class="line">    optimizationLevel: <span class="number">3</span>,</div><div class="line">    progressive: <span class="literal">true</span>,</div><div class="line">    interlaced: <span class="literal">true</span></div><div class="line">  &#125;)))</div><div class="line">  .pipe(gulp.dest(<span class="string">'dist/images'</span>));</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 清理</span></div><div class="line">gulp.task(<span class="string">'clean'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> gulp.src([<span class="string">'dist/styles'</span>, <span class="string">'dist/scripts'</span>, <span class="string">'dist/images'</span>], &#123;read: <span class="literal">false</span>&#125;)</div><div class="line">  .pipe(clean());</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 预设任务</span></div><div class="line">gulp.task(<span class="string">'default'</span>, [<span class="string">'clean'</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  gulp.start(<span class="string">'styles'</span>, <span class="string">'scripts'</span>, <span class="string">'images'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 看守</span></div><div class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  livereload.listen();<span class="comment">// 建立即时重整伺服器</span></div><div class="line">  gulp.watch(<span class="string">'src/styles/**/*.scss'</span>, [<span class="string">'styles'</span>]);<span class="comment">// 看守所有.scss档</span></div><div class="line">  gulp.watch(<span class="string">'src/scripts/**/*.js'</span>, [<span class="string">'scripts'</span>]);<span class="comment">// 看守所有.js档</span></div><div class="line">  gulp.watch(<span class="string">'src/images/**/*.&#123;png,jpg,gif,ico&#125;'</span>, [<span class="string">'images'</span>]);<span class="comment">// 看守所有图片档</span></div><div class="line">  gulp.watch([<span class="string">'dist/**'</span>]).on(<span class="string">'change'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">file</span>) </span>&#123;<span class="comment">// 看守所有位在 dist/ 目录下的档案，一旦有更动，便进行重整</span></div><div class="line">    livereload.changed(file.path);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/22/gulp使用/" data-id="cisl89teo0004m5afdipu7b6p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-sass常用模块" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/26/sass常用模块/" class="article-date">
+  <time datetime="2016-07-26T08:08:03.000Z" itemprop="datePublished">2016-07-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/26/sass常用模块/">sass常用模块</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="sass常用模块"><a href="#sass常用模块" class="headerlink" title="sass常用模块"></a>sass常用模块</h3><p>图片适配retina屏幕<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@mixin image_2x($image, $type) &#123;</div><div class="line">  background-image: url($image + &quot;.&quot; + $type);</div><div class="line">  @media (min--moz-device-pixel-ratio: 1.3),</div><div class="line">  (-o-min-device-pixel-ratio: 2.6/2),</div><div class="line">  (-webkit-min-device-pixel-ratio: 1.3),</div><div class="line">  (min-device-pixel-ratio: 1.3),</div><div class="line">  (min-resolution: 1.3dppx) &#123;</div><div class="line">    /* on retina, use image that&apos;s scaled by 2 */</div><div class="line">    background-image: url($image + &quot;@2x.&quot; + $type);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/26/sass常用模块/" data-id="cisl89tet0007m5afl4obgoau" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-git-rebase-使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/26/git-rebase-使用/" class="article-date">
+  <time datetime="2016-07-26T07:55:39.000Z" itemprop="datePublished">2016-07-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/26/git-rebase-使用/">git rebase 使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="git-rebase-使用"><a href="#git-rebase-使用" class="headerlink" title="git rebase 使用"></a>git rebase 使用</h3><p>使用rebase合并，比merge合并好处在于减少多余的合并记录</p>
+<p>参考：<a href="https://backlogtool.com/git-guide/tw/stepup/stepup2_8.html" target="_blank" rel="external">https://backlogtool.com/git-guide/tw/stepup/stepup2_8.html</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#master主分支，dev次分支</span></div><div class="line"><span class="comment">#master分支保持最新版本</span></div><div class="line">git pull origin master</div><div class="line"></div><div class="line"><span class="comment">#切换到到dev分支</span></div><div class="line">git checkout dev</div><div class="line"></div><div class="line"><span class="comment">#基于master分支rebase</span></div><div class="line">git rebase master</div><div class="line"></div><div class="line"><span class="comment">#添加修改文件</span></div><div class="line">git add <span class="string">'文件名'</span></div><div class="line"></div><div class="line"><span class="comment">#切换到master分支，并合并dev分支</span></div><div class="line">git checkout master</div><div class="line">git merge dev</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/26/git-rebase-使用/" data-id="cisl89ten0003m5afd2jz6eby" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ajax上传图片" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/25/ajax上传图片/" class="article-date">
+  <time datetime="2016-07-25T06:47:42.000Z" itemprop="datePublished">2016-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/25/ajax上传图片/">ajax上传图片</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="ajax上传图片"><a href="#ajax上传图片" class="headerlink" title="ajax上传图片"></a>ajax上传图片</h3><p>接到一个用户反馈的页面，其中要求用户能够上传图片且多图，不使用多图上传的插件情况下思路如下：</p>
+<ul>
+<li>监听input[type=”file”]的change事件上传图片，图片上传成功后返回图片的转存地址，再生产预览图</li>
+<li>用户提交表单反馈时候遍历预览图中的图片转存地址，用’,’作拼接符（后台要求）</li>
+</ul>
+<p>之前没接触过ajax独立上传图片，记录一下方法</p>
+<p>Demo：<a href="http://jsbin.com/kupaquhalu/edit?html,js,console,output" target="_blank" rel="external">http://jsbin.com/kupaquhalu/edit?html,js,console,output</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"#"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"image"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> image = <span class="built_in">document</span>.getElementById(<span class="string">'image'</span>);</div><div class="line">image.addEventListener(<span class="string">'change'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> image_file = <span class="keyword">this</span>.files[<span class="number">0</span>]; <span class="comment">// 获取图片文件对象</span></div><div class="line">  <span class="keyword">var</span> image_data = <span class="keyword">new</span> FormData(); <span class="comment">// 新建表单数据</span></div><div class="line">  image_data.append(<span class="string">'image'</span>, image_file); <span class="comment">// 使用append方法添加字段</span></div><div class="line">  $.ajax(&#123;</div><div class="line">    url: <span class="string">'api/upload_address'</span>,</div><div class="line">    method: <span class="string">'post'</span>,</div><div class="line">    dataType: <span class="string">'json'</span>,</div><div class="line">    cache: <span class="literal">false</span>, <span class="comment">// 上传文件不需要缓存。</span></div><div class="line">    processData: <span class="literal">false</span>, <span class="comment">// 因为data值是FormData对象，不需要对数据做处理。</span></div><div class="line">    contentType: <span class="literal">false</span>, <span class="comment">// 因为是由&lt;form&gt;表单构造的FormData对象，且已经声明了属性enctype="multipart/form-data"，所以这里设置为false。</span></div><div class="line">    data: image_data,</div><div class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'success'</span>);</div><div class="line">      <span class="built_in">console</span>.log(data);</div><div class="line">    &#125;,</div><div class="line">    error: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'error'</span>);</div><div class="line">      <span class="built_in">console</span>.log(data);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/25/ajax上传图片/" data-id="cisl89tem0002m5af9l738y9h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Ubuntu下安装使用Shadowsocks" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/07/Ubuntu下安装使用Shadowsocks/" class="article-date">
+  <time datetime="2016-07-07T08:08:00.000Z" itemprop="datePublished">2016-07-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/07/Ubuntu下安装使用Shadowsocks/">Ubuntu下安装使用Shadowsocks</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Ubuntu下安装使用Shadowsocks"><a href="#Ubuntu下安装使用Shadowsocks" class="headerlink" title="Ubuntu下安装使用Shadowsocks"></a>Ubuntu下安装使用Shadowsocks</h3><ul>
+<li><p>ubuntu安装shadowsocks</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure>
+</li>
+<li><p>shadowsocks没有菜单栏解决办法<br><a href="https://bugs.launchpad.net/ubuntu/+source/appmenu-qt5/+bug/1307619" target="_blank" rel="external">https://bugs.launchpad.net/ubuntu/+source/appmenu-qt5/+bug/1307619</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove appmenu-qt5</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装proxychains-ng</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">mkdir -p ~/softwares</div><div class="line"><span class="built_in">cd</span> ~/softwares</div><div class="line">git <span class="built_in">clone</span> git@github.com:rofl0r/proxychains-ng.git</div><div class="line"><span class="built_in">cd</span> proxychains-ng</div><div class="line">./configure --prefix=/usr --sysconfdir=/etc</div><div class="line">make clean</div><div class="line">make</div><div class="line">sudo make install</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改proxychains文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim ~/.proxychains-ng/proxychains.conf</div></pre></td></tr></table></figure>
+</li>
+<li><p>复制粘贴一下内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">strict_chain</div><div class="line">proxy_dns</div><div class="line">remote_dns_subnet 224</div><div class="line">tcp_read_time_out 15000</div><div class="line">tcp_connect_time_out 8000</div><div class="line">localnet 127.0.0.0/255.0.0.0</div><div class="line">quiet_mode</div><div class="line"></div><div class="line">[ProxyList]</div><div class="line">socks5  127.0.0.1 1080</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/07/Ubuntu下安装使用Shadowsocks/" data-id="cisl89teg0000m5afxfogoxtr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/29/hexo使用/" class="article-date">
+  <time datetime="2016-06-29T02:43:07.000Z" itemprop="datePublished">2016-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/29/hexo使用/">hexo使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Hexo使用"><a href="#Hexo使用" class="headerlink" title="Hexo使用"></a>Hexo使用</h3><ul>
+<li><p>注意hexo项目需要2个分支(master,hexo)<br>先在github新建一个xxx.github.io的项目，开启github page功能，git拉取项目一个存放hexo生成的页面资源，另一个存放hexo源文件以便在其他电脑写文章,血的教训</p>
+</li>
+<li><p>工具git，node  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#git</span></div><div class="line">sudo apt-get install git</div><div class="line"><span class="comment">#使用</span></div><div class="line">ssh-keygen -t rsa -b 4096 -C 邮箱</div><div class="line">git config --global user.email 邮箱</div><div class="line">git config --global user.name 名字</div><div class="line"><span class="comment">#找key文件，添加到github</span></div><div class="line"><span class="built_in">cd</span> ~/.ssh</div><div class="line"></div><div class="line"><span class="comment">#node</span></div><div class="line">curl https://raw.github.com/creationix/nvm/master/install.sh | sh</div><div class="line">或</div><div class="line">wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</div><div class="line">nvm install 4</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#全局安装hexo</span></div><div class="line">npm install hexo -g</div><div class="line"></div><div class="line"><span class="comment">#拉取仓库</span></div><div class="line">git <span class="built_in">clone</span> 仓库地址</div><div class="line"></div><div class="line"><span class="comment">#切换仓库目录</span></div><div class="line"><span class="built_in">cd</span> 仓库目录名</div><div class="line"></div><div class="line"><span class="comment">#hexo初始化</span></div><div class="line">hexo init</div><div class="line"></div><div class="line"><span class="comment">#git初始化，因为hexo init初始化会使git失效，需要重新关联仓库</span></div><div class="line">git init</div><div class="line">git remote add orign 仓库地址</div><div class="line"></div><div class="line"><span class="comment">#安装依赖</span></div><div class="line">npm install</div><div class="line"></div><div class="line"><span class="comment">#安装一个插件，以便部署到github</span></div><div class="line">npm install hexo-deployer-git --save</div><div class="line"></div><div class="line"><span class="comment">#先切换保存hexo源文件的分支提交源文件，以便日后在其他电脑上写文章</span></div><div class="line">git checkout hexo</div><div class="line">git add .</div><div class="line">git commit -m <span class="string">'提交hexo源文件'</span></div><div class="line">git push origin hexo</div><div class="line"></div><div class="line"><span class="comment">#切回master分支，可以开始写文章</span></div><div class="line">git checkout master</div><div class="line">hexo new 文章名</div><div class="line"></div><div class="line"><span class="comment">#生成静态资源，查看效果，提交文章</span></div><div class="line">hexo generate</div><div class="line">hexo server</div><div class="line">hexo deploy <span class="comment">#需要安装hexo-deployer-git</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/29/hexo使用/" data-id="cisl89tep0005m5afch7gbcb8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/09/01/localStorage使用/">localStorage使用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/01/FileReader使用/">FileReader使用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/22/gulp使用/">gulp使用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/26/sass常用模块/">sass常用模块</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/26/git-rebase-使用/">git rebase 使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 老周<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
