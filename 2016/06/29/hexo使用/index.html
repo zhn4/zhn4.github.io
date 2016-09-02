@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hexo使用 | 老周</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Hexo使用
+注意hexo项目需要2个分支(master,hexo)先在github新建一个xxx.github.io的项目，开启github page功能，git拉取项目一个存放hexo生成的页面资源，另一个存放hexo源文件以便在其他电脑写文章,血的教训
+
+工具git，node  
+1234567891011121314#gitsudo apt-get install git#使用ssh-ke">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo使用">
+<meta property="og:url" content="http://yoursite.com/2016/06/29/hexo使用/index.html">
+<meta property="og:site_name" content="老周">
+<meta property="og:description" content="Hexo使用
+注意hexo项目需要2个分支(master,hexo)先在github新建一个xxx.github.io的项目，开启github page功能，git拉取项目一个存放hexo生成的页面资源，另一个存放hexo源文件以便在其他电脑写文章,血的教训
+
+工具git，node  
+1234567891011121314#gitsudo apt-get install git#使用ssh-ke">
+<meta property="og:updated_time" content="2016-09-02T03:46:23.918Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo使用">
+<meta name="twitter:description" content="Hexo使用
+注意hexo项目需要2个分支(master,hexo)先在github新建一个xxx.github.io的项目，开启github page功能，git拉取项目一个存放hexo生成的页面资源，另一个存放hexo源文件以便在其他电脑写文章,血的教训
+
+工具git，node  
+1234567891011121314#gitsudo apt-get install git#使用ssh-ke">
+  
+    <link rel="alternate" href="/atom.xml" title="老周" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">老周</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">学习，记录，分享</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/29/hexo使用/" class="article-date">
+  <time datetime="2016-06-29T02:43:07.000Z" itemprop="datePublished">2016-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Hexo使用"><a href="#Hexo使用" class="headerlink" title="Hexo使用"></a>Hexo使用</h3><ul>
+<li><p>注意hexo项目需要2个分支(master,hexo)<br>先在github新建一个xxx.github.io的项目，开启github page功能，git拉取项目一个存放hexo生成的页面资源，另一个存放hexo源文件以便在其他电脑写文章,血的教训</p>
+</li>
+<li><p>工具git，node  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#git</span></div><div class="line">sudo apt-get install git</div><div class="line"><span class="comment">#使用</span></div><div class="line">ssh-keygen -t rsa -b 4096 -C 邮箱</div><div class="line">git config --global user.email 邮箱</div><div class="line">git config --global user.name 名字</div><div class="line"><span class="comment">#找key文件，添加到github</span></div><div class="line"><span class="built_in">cd</span> ~/.ssh</div><div class="line"></div><div class="line"><span class="comment">#node</span></div><div class="line">curl https://raw.github.com/creationix/nvm/master/install.sh | sh</div><div class="line">或</div><div class="line">wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</div><div class="line">nvm install 4</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#全局安装hexo</span></div><div class="line">npm install hexo -g</div><div class="line"></div><div class="line"><span class="comment">#拉取仓库</span></div><div class="line">git <span class="built_in">clone</span> 仓库地址</div><div class="line"></div><div class="line"><span class="comment">#切换仓库目录</span></div><div class="line"><span class="built_in">cd</span> 仓库目录名</div><div class="line"></div><div class="line"><span class="comment">#hexo初始化</span></div><div class="line">hexo init</div><div class="line"></div><div class="line"><span class="comment">#git初始化，因为hexo init初始化会使git失效，需要重新关联仓库</span></div><div class="line">git init</div><div class="line">git remote add orign 仓库地址</div><div class="line"></div><div class="line"><span class="comment">#安装依赖</span></div><div class="line">npm install</div><div class="line"></div><div class="line"><span class="comment">#安装一个插件，以便部署到github</span></div><div class="line">npm install hexo-deployer-git --save</div><div class="line"></div><div class="line"><span class="comment">#先切换保存hexo源文件的分支提交源文件，以便日后在其他电脑上写文章</span></div><div class="line">git checkout hexo</div><div class="line">git add .</div><div class="line">git commit -m <span class="string">'提交hexo源文件'</span></div><div class="line">git push origin hexo</div><div class="line"></div><div class="line"><span class="comment">#切回master分支，可以开始写文章</span></div><div class="line">git checkout master</div><div class="line">hexo new 文章名</div><div class="line"></div><div class="line"><span class="comment">#生成静态资源，查看效果，提交文章</span></div><div class="line">hexo generate</div><div class="line">hexo server</div><div class="line">hexo deploy <span class="comment">#需要安装hexo-deployer-git</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/29/hexo使用/" data-id="cisl89tep0005m5afch7gbcb8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/07/Ubuntu下安装使用Shadowsocks/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Ubuntu下安装使用Shadowsocks
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/09/01/localStorage使用/">localStorage使用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/01/FileReader使用/">FileReader使用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/22/gulp使用/">gulp使用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/26/sass常用模块/">sass常用模块</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/26/git-rebase-使用/">git rebase 使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 老周<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
