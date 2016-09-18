@@ -5,7 +5,7 @@ tags:
 ---
 ### Hexo使用
 - 注意hexo项目需要2个分支(master,hexo)  
-先在github新建一个xxx.github.io的项目，开启github page功能，git拉取项目一个存放hexo生成的页面资源，另一个存放hexo源文件以便在其他电脑写文章,血的教训
+先在github新建一个xxx.github.io的项目，开启github page功能，git拉取项目一个存放hexo生成的页面资源，另一个存放hexo源文件以便在其他电脑写文章
 
 - 工具git，node  
 ```bash
