@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 老周
+title: 周
 subtitle: 学习，记录，分享
 description:
-author: 老周
+author: 周
 language:
 timezone:
 
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: yinwang
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
