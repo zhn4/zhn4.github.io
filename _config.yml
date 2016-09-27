@@ -69,5 +69,5 @@ theme: wixo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:zhn4/zhn4.github.io.git
+  repo: https://github.com/zhn4/zhn4.github.io.git
   branch: master
