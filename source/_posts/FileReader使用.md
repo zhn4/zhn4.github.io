@@ -21,18 +21,18 @@ Demo
 </form>
 
 <img src="" alt="" id="show-image" />
+```
 
-<script type="text/javascript">
-  var file_image = document.getElementById('file-image');
-  file_image.addEventListener('change', function() {
-    console.log('listening');
-    var file_reader = new FileReader();
-    file_reader.addEventListener('load', function() {
-      console.log(this.result);
-      var show_image = document.getElementById('show-image');
-      show_image.src = this.result;
-    });
-    file_reader.readAsDataURL(this.files[0]);
+```javascript
+var file_image = document.getElementById('file-image');
+file_image.addEventListener('change', function() {
+  console.log('listening');
+  var file_reader = new FileReader();
+  file_reader.addEventListener('load', function() {
+    console.log(this.result);
+    var show_image = document.getElementById('show-image');
+    show_image.src = this.result;
   });
-</script>
+  file_reader.readAsDataURL(this.files[0]);
+});
 ```

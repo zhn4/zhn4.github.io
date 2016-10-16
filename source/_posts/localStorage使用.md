@@ -41,36 +41,34 @@ tags:
     }
   </style>
 
-  <script>
-    document.getElementById('clean').addEventListener('click', function() {
-      console.log('清除localStorage数据');
-      localStorage.clear(); //清除localStroage
-    });
-
-    var value = document.getElementsByClassName('value');
-    var movies = {
-      movie: []
-    };
-
-    for(var i = 0; i < value.length; i++) {
-      value[i].addEventListener('click', function() {
-        console.log(this.dataset['id']);
-        console.log(this.innerHTML);
-        movies.movie.push({
-          id: this.dataset['id'],
-          name: this.innerHTML
-        })
-        localStorage.setItem('movies', JSON.stringify(movies));// 使用JSON.stringify()字符串化数据
-      })
-    }
-
-    console.log(localStorage);// 原始localStroage数据
-    console.log('----');
-    console.log(JSON.parse(localStorage.getItem('movies')));// 使用JSON.parse()解析成json数据
-
-  </script>
-
 </body>
 </html>
+```
 
+```javascript
+document.getElementById('clean').addEventListener('click', function() {
+  console.log('清除localStorage数据');
+  localStorage.clear(); //清除localStroage
+});
+
+var value = document.getElementsByClassName('value');
+var movies = {
+  movie: []
+};
+
+for(var i = 0; i < value.length; i++) {
+  value[i].addEventListener('click', function() {
+    console.log(this.dataset['id']);
+    console.log(this.innerHTML);
+    movies.movie.push({
+      id: this.dataset['id'],
+      name: this.innerHTML
+    })
+    localStorage.setItem('movies', JSON.stringify(movies));// 使用JSON.stringify()字符串化数据
+  })
+}
+
+console.log(localStorage);// 原始localStroage数据
+console.log('----');
+console.log(JSON.parse(localStorage.getItem('movies')));// 使用JSON.parse()解析成json数据
 ```
