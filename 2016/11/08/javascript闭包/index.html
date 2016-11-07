@@ -6,6 +6,12 @@
   <title>javascript闭包 | 老周</title>
   <meta name="author" content="老周">
   
+  <meta name="description" content="javascript闭包
+函数内部包含另一个函数及调用
+函数被调用，内部的局部声明依然存在
+
+123456789101112function a(num) &amp;#123;  var b = 123 + Number(num);  return function() &amp;#123;    console.">
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -54,7 +60,12 @@
 	  
 
 	  <!-- content -->
-	  	  
+	  <h3 id="javascript闭包"><a href="#javascript闭包" class="headerlink" title="javascript闭包"></a>javascript闭包</h3><ul>
+<li>函数内部包含另一个函数及调用</li>
+<li>函数被调用，内部的局部声明依然存在</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> b = <span class="number">123</span> + <span class="built_in">Number</span>(num);</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'b is '</span> + b);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'call this function'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> a2 = a(<span class="number">2</span>);</div><div class="line">a2();<span class="comment">//125</span></div><div class="line"><span class="keyword">var</span> a3 = a(<span class="number">3</span>);</div><div class="line">a3();<span class="comment">//126</span></div></pre></td></tr></table></figure>
+	  
 
 	  <div>
   		<center>
