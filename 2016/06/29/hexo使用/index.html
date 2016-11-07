@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hexo使用 | 老周</title>
+  <meta name="author" content="老周">
+  
+  <meta name="description" content="Hexo使用
+注意hexo项目需要2个分支(master,hexo)先在github新建一个xxx.github.io的项目，开启github page功能，git拉取项目一个存放hexo生成的页面资源，另一个存放hexo源文件以便在其他电脑写文章
+
+工具git，node  
+12345678910">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="hexo使用"/>
+  <meta property="og:site_name" content="老周"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="老周" type="application/atom+xml">
+  
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">老周</a><span class="split"></span><span class="title">hexo使用</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-06-29</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <h3 id="Hexo使用"><a href="#Hexo使用" class="headerlink" title="Hexo使用"></a>Hexo使用</h3><ul>
+<li><p>注意hexo项目需要2个分支(master,hexo)<br>先在github新建一个xxx.github.io的项目，开启github page功能，git拉取项目一个存放hexo生成的页面资源，另一个存放hexo源文件以便在其他电脑写文章</p>
+</li>
+<li><p>工具git，node  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#git</span></div><div class="line">sudo apt-get install git</div><div class="line"><span class="comment">#使用</span></div><div class="line">ssh-keygen -t rsa -b 4096 -C 邮箱</div><div class="line">git config --global user.email 邮箱</div><div class="line">git config --global user.name 名字</div><div class="line"><span class="comment">#找key文件，添加到github</span></div><div class="line"><span class="built_in">cd</span> ~/.ssh</div><div class="line"></div><div class="line"><span class="comment">#node</span></div><div class="line">curl https://raw.github.com/creationix/nvm/master/install.sh | sh</div><div class="line">或</div><div class="line">wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</div><div class="line">nvm install 4</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#全局安装hexo</span></div><div class="line">npm install hexo -g</div><div class="line"></div><div class="line"><span class="comment">#拉取仓库</span></div><div class="line">git <span class="built_in">clone</span> 仓库地址</div><div class="line"></div><div class="line"><span class="comment">#切换仓库目录</span></div><div class="line"><span class="built_in">cd</span> 仓库目录名</div><div class="line"></div><div class="line"><span class="comment">#hexo初始化</span></div><div class="line">hexo init</div><div class="line"></div><div class="line"><span class="comment">#git初始化，因为hexo init初始化会使git失效，需要重新关联仓库</span></div><div class="line">git init</div><div class="line">git remote add orign 仓库地址</div><div class="line"></div><div class="line"><span class="comment">#安装依赖</span></div><div class="line">npm install</div><div class="line"></div><div class="line"><span class="comment">#安装一个插件，以便部署到github</span></div><div class="line">npm install hexo-deployer-git --save</div><div class="line"></div><div class="line"><span class="comment">#先切换保存hexo源文件的分支提交源文件，以便日后在其他电脑上写文章</span></div><div class="line">git checkout hexo</div><div class="line">git add .</div><div class="line">git commit -m <span class="string">'提交hexo源文件'</span></div><div class="line">git push origin hexo</div><div class="line"></div><div class="line"><span class="comment">#切回master分支，可以开始写文章</span></div><div class="line">git checkout master</div><div class="line">hexo new 文章名</div><div class="line"></div><div class="line"><span class="comment">#生成静态资源，查看效果，提交文章</span></div><div class="line">hexo generate</div><div class="line">hexo server</div><div class="line">hexo deploy <span class="comment">#需要安装hexo-deployer-git</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+	
+	
+		<li class="prev"><a href="/2016/07/07/Ubuntu下安装使用Shadowsocks/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2016 老周
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

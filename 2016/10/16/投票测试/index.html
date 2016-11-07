@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>投票测试 | 老周</title>
+  <meta name="author" content="老周">
+  
+  <meta name="description" content="投票测试测试环境，自己模拟json数据可扩展添加记分功能
+1234567891011121314151617181920212223&amp;lt;h1&amp;gt;测试模板&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;  Q: &amp;lt;span id=&quot;question-box&quot;&amp;gt;???&amp;lt;/span&amp;gt">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="投票测试"/>
+  <meta property="og:site_name" content="老周"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="老周" type="application/atom+xml">
+  
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">老周</a><span class="split"></span><span class="title">投票测试</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2016-10-16</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <h3 id="投票测试"><a href="#投票测试" class="headerlink" title="投票测试"></a>投票测试</h3><p>测试环境，自己模拟json数据<br>可扩展添加记分功能</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>测试模板<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">  Q: <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"question-box"</span>&gt;</span>???<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"answer-box"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- 模板 --&gt;</span></div><div class="line">  <span class="comment">&lt;!-- &lt;li&gt;</span></div><div class="line">    &lt;a href="javascript:;" class="answer"&gt;a1:&lt;/a&gt;</div><div class="line">  &lt;/li&gt; --&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"sure"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">  /*答案默认样式*/</div><div class="line">  .answer &#123;</div><div class="line">    color: blue;</div><div class="line">  &#125;</div><div class="line">  /*答案选中样式*/</div><div class="line">  .active &#123;</div><div class="line">    color: red;</div><div class="line">    font-weight: bold;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> answer = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'answer'</span>),<span class="comment">// 答案选项</span></div><div class="line">    sure = <span class="built_in">document</span>.getElementById(<span class="string">'sure'</span>);<span class="comment">// 确认按钮</span></div><div class="line">    num = <span class="number">0</span>,</div><div class="line">    judge_answer = <span class="literal">false</span>,<span class="comment">// 是否选中答案</span></div><div class="line">    chose = <span class="string">''</span>,</div><div class="line">    mark = <span class="number">0</span>;<span class="comment">// 记录当前题目</span></div><div class="line">    data = [</div><div class="line">      &#123;</div><div class="line">        <span class="string">'q'</span>: <span class="string">'问题1'</span>,</div><div class="line">        <span class="string">'a'</span>: [</div><div class="line">          <span class="string">'答案1'</span>,<span class="string">'答案2'</span>, <span class="string">'答案3'</span>, <span class="string">'答案4'</span></div><div class="line">        ]</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        <span class="string">'q'</span>: <span class="string">'问题2'</span>,</div><div class="line">        <span class="string">'a'</span>: [</div><div class="line">          <span class="string">'答案1'</span>, <span class="string">'答案2'</span>, <span class="string">'答案3'</span>, <span class="string">'答案4'</span></div><div class="line">        ]</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        <span class="string">'q'</span>: <span class="string">'问题3'</span>,</div><div class="line">        <span class="string">'a'</span>: [</div><div class="line">          <span class="string">'答案1'</span>, <span class="string">'答案2'</span>, <span class="string">'答案3'</span>, <span class="string">'答案4'</span></div><div class="line">        ]</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        <span class="string">'q'</span>: <span class="string">'问题4'</span>,</div><div class="line">        <span class="string">'a'</span>: [</div><div class="line">          <span class="string">'答案1'</span>, <span class="string">'答案2'</span>, <span class="string">'答案3'</span>, <span class="string">'答案4'</span></div><div class="line">        ]</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">    data_length = data.length,<span class="comment">// 数据长度</span></div><div class="line">    answer_box = <span class="built_in">document</span>.getElementById(<span class="string">'answer-box'</span>),<span class="comment">// 问题容器</span></div><div class="line">    question_box = <span class="built_in">document</span>.getElementById(<span class="string">'question-box'</span>);<span class="comment">// 答案容器</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> add_answer = <span class="function"><span class="keyword">function</span>(<span class="params">number</span>) </span>&#123;<span class="comment">// 添加问题</span></div><div class="line">  answer_box.innerHTML = <span class="string">''</span>;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; data[number].a.length; i++) &#123;</div><div class="line">    answer_box.insertAdjacentHTML(<span class="string">'afterbegin'</span>, <span class="string">'&lt;li&gt;&lt;a href="javascript:;" class="answer"&gt;'</span> + data[number].a[i] + <span class="string">'&lt;/a&gt;&lt;/li&gt;'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> add_question = <span class="function"><span class="keyword">function</span>(<span class="params">number</span>) </span>&#123;<span class="comment">// 添加答案</span></div><div class="line">  question_box.innerHTML = data[number].q;</div><div class="line">&#125;</div><div class="line"><span class="comment">// add_question(mark);</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> add_fun = <span class="function"><span class="keyword">function</span>(<span class="params">number</span>) </span>&#123;<span class="comment">// 调用问题/答案函数</span></div><div class="line">  <span class="keyword">if</span>(mark &lt; data_length) &#123;</div><div class="line">    add_answer(number);</div><div class="line">    add_question(number);</div><div class="line">  &#125;<span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'gg'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">add_fun(mark);</div><div class="line"></div><div class="line"><span class="keyword">var</span> click_fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; answer.length; i++) &#123;</div><div class="line">    answer[i].num = i;</div><div class="line">    answer[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="comment">// 选择答案</span></div><div class="line">      answer[num].classList.remove(<span class="string">'active'</span>);</div><div class="line">      <span class="keyword">this</span>.classList.add(<span class="string">'active'</span>);</div><div class="line">      chose = <span class="keyword">this</span>.num;</div><div class="line">      num = <span class="keyword">this</span>.num;</div><div class="line">      judge_answer = <span class="literal">true</span>;</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">click_fun();</div><div class="line"></div><div class="line">sure.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="comment">// 确认提交</span></div><div class="line">  <span class="keyword">if</span>(judge_answer) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'已经选择'</span>);</div><div class="line">    <span class="built_in">console</span>.log(answer[chose]); <span class="comment">//显示已选择选项</span></div><div class="line">    judge_answer = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; answer.length; i++) &#123; <span class="comment">//清空选择</span></div><div class="line">      answer[i].classList.remove(<span class="string">'active'</span>);</div><div class="line">    &#125;</div><div class="line">    mark = mark + <span class="number">1</span>;<span class="comment">// 题目数</span></div><div class="line">    add_fun(mark);</div><div class="line">    click_fun();</div><div class="line">  &#125;<span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'未选择'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+			
+		
+	
+		
+			
+			
+			
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+	
+	
+		<li class="prev"><a href="/2016/10/16/document-designMode使用/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next"><a href="/2016/09/26/导航栏高亮/" class="alignright next">next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2016 老周
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>
